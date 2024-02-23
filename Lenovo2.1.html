@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tab Example</title>
+<!-- Bootstrap CSS -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<style>
+  /* Custom Styles */
+  body {
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #fff; /* Setting text color to white for better visibility */
+  }
+
+  .tabcontent {
+    padding: 20px;
+  }
+</style>
+</head>
+<body>
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="dropdown mb-3">
+        <h3>Device Type:</h3>
+        <select class="form-control">
+          <option value="Desktop">Desktop</option>
+          <option value="Laptop">Laptop</option>
+          <option value="Monitor">Monitor</option>
+          <option value="Dock">Docking Station</option>
+        </select>
+      </div>
+      <div class="dropdown mb-3">
+        <h3>Problem Description</h3>
+        <select class="form-control">
+          <option value="NA">N/A</option>
+          <option value="Beeps">Beeps</option>
+          <option value="Cannot access BIOS">Cannot access BIOS</option>
+          <option value="PSU">PSU</option>
+          <option value="AC adaptor">AC adaptor</option>
+          <option value="BSOD">BSOD</option>
+          <option value="Backlight">Backlight</option>
+          <option value="Dim">Dim</option>
+          <option value="Flickering">Flickering</option>
+          <option value="Abnormal lines">Abnormal lines</option>
+          <option value="Pixels">Pixels</option>
+          <option value="Blinking">Blinking</option>
+          <option value="No video">No video</option>
+          <option value="SSD">SSD</option>
+          <option value="HDD">HDD</option>
+          <option value="Drive not seen">Drive not seen</option>
+          <option value="Freeze">Freeze</option>
+          <option value="Locks">Locks</option>
+          <option value="RAM">RAM</option>
+          <option value="Device very slow">Device very slow</option>
+          <option value="Charging">Charging</option>
+          <option value="USB">USB</option>
+          <option value="Not detectable">Not detectable</option>
+          <option value="Loose">Loose</option>
+          <option value="Trackpoint">Trackpoint</option>
+          <option value="Keys not working">Keys not working</option>
+          <option value="Trackpoint moving">Trackpoint moving</option>
+          <option value="Trackpad">Trackpad</option>
+          <option value="Clicks">Clicks</option>
+          <option value="Not responding">Not responding</option>
+          <option value="Cursor moving">Cursor moving</option>
+          <option value="Auto shutdown">Auto shutdown</option>
+          <option value="CPU">CPU</option>
+          <option value="Speakers">Speakers</option>
+          <option value="Mic">Mic</option>
+          <option value="No sound">No sound</option>
+          <option value="Speakers crackling">Speakers crackling</option>
+          <option value="Low">Low</option>
+          <option value="Crackling">Crackling</option>
+          <option value="Fan noise">Fan noise</option>
+          <option value="Fan error">Fan error</option>
+          <option value="Bitlocker">Bitlocker</option>
+          <option value="Drivers">Drivers</option>
+          <option value="BIOS update">BIOS update</option>
+          <option value="Firmware">Firmware</option>
+          <option value="WiFi">WiFi</option>
+          <option value="Ethernet">Ethernet</option>
+          <option value="Cable">Cable</option>
+          <option value="Port">Port</option>
+          <option value="NIC">NIC</option>
+          <option value="Connection">Connection</option>
+          <option value="RJ45">RJ45</option>
+          <option value="Disconnected">Disconnected</option>
+          <option value="No power">No power</option>
+          <option value="Network">Network</option>
+          <option value="Display">Display</option>
+          <option value="Cracked">Cracked</option>
+          <option value="Broken">Broken</option>
+          <option value="Damaged">Damaged</option>
+          <option value="Liquid">Liquid</option>
+          <option value="Not working">Not working</option>
+          <option value="Not detected">Not detected</option>
+          <option value="Distorted">Distorted</option>
+          <option value="Blurry">Blurry</option>
+          <option value="Driver not seen">Driver not seen</option>
+          <option value="Pen">Pen</option>
+          <option value="Printer">Printer</option>
+          <option value="Mouse">Mouse</option>
+          <option value="Keyboard">Keyboard</option>
+          <option value="Headset">Headset</option>
+          <option value="Phantom touch">Phantom touch</option>
+          <option value="Ghost">Ghost</option>
+          <option value="Battery health">Battery health</option>
+          <option value="Drain">Drain</option>
+          <option value="Unable to image">Unable to image</option>
+          <option value="Thermal">Thermal</option>
+          <option value="Monitor">Monitor</option>
+          <option value="Cannot wake up from sleep">Cannot wake up from sleep</option>
+          <option value="Power">Power</option>
+          <option value="Ghost type">Ghost type</option>
+          <option value="CMOS battery">CMOS battery</option>
+          <option value="Battery doesn't charge">Battery doesn't charge</option>
+          <option value="Sticking">Sticking</option>
+          <option value="USB C">USB C</option>
+          <option value="Power button">Power button</option>
+          <option value="GPU">GPU</option>
+          <option value="Stuck">Stuck</option>
+        </select>
+      </div>
+      <div class="dropdown mb-3">
+        <h3>Sub Problem Description:</h3>
+        <select class="form-control">
+          <option value="NA">N/A</option>
+          <option value="no power">no power</option>
+          <option value="no boot">no boot</option>
+          <option value="no post">no post</option>
+          <option value="display issues">display issues</option>
+          <option value="storage">storage</option>
+          <option value="memory">memory</option>
+          <option value="ports">ports</option>
+          <option value="keyboard">keyboard</option>
+          <option value="touchpad">touchpad</option>
+          <option value="auto restart">auto restart</option>
+          <option value="audio">audio</option>
+          <option value="overheating">overheating</option>
+          <option value="fan">fan</option>
+          <option value="software">software</option>
+          <option value="network">network</option>
+          <option value="dock">dock</option>
+          <option value="cid">cid</option>
+          <option value="finger print">finger print</option>
+          <option value="camera">camera</option>
+          <option value="accessories">accessories</option>
+          <option value="touchscreen">touchscreen</option>
+          <option value="battery issue">battery issue</option>
+          <option value="cmos">cmos</option>
+        </select>
+      </div>
+      <div class="form-group mb-3"> <!-- Use form-group class for proper spacing -->
+        <h3>M/T</h3>
+        <input type="text" id="MT" name="MT" class="form-control"> <!-- Added form-control class -->
+      </div>
+      <div class="form-group mb-3"> <!-- Use form-group class for proper spacing -->
+        <h3>Search</h3>
+        <input type="file" id="excel_file" value="Search">
+      </div>
+    </div>
+
+    <div class="col-md-9">
+      <div class="tab mb-3">
+        <button class="btn btn-primary tablinks" onclick="openTab(event, 'Tab1')" id="defaultOpen">PD Guide Steps:</button>
+        <button class="btn btn-primary tablinks" onclick="openTab(event, 'Tab2')">Troubleshooting Done</button>
+        <button class="btn btn-primary tablinks" onclick="openTab(event, 'Tab3')">Dispatched Parts</button>
+      </div>
+
+      <div id="Tab1" class="tabcontent">
+        <h3>PD Guide Code / PD guide Steps taken:</h3>
+        <p>This is the content of tab 1.</p>
+      </div>
+
+      <div id="Tab2" class="tabcontent">
+        <h3>Troubleshooting Steps taken:</h3>
+        <p>This is the content of tab 2.</p>
+      </div>
+
+      <div id="Tab3" class="tabcontent">
+        <h3>Dispatch Parts:</h3>
+        <p>This is the content of tab 3.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS and jQuery (required for Bootstrap) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+  function openTab(evt, tabName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+
+  // Get the element with id="defaultOpen" and click on it
+  document.getElementById("defaultOpen").click();
+</script>
+
+</body>
+</html>
