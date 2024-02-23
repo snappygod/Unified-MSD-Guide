@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MSD Unified Guide</title>
+<!-- Bootstrap CSS -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<!-- Javascript-->
+<script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
+<style>
+  /* Custom Styles */
+  body {
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #fff; /* Setting text color to white for better visibility */
+  }
+
+  .tabcontent {
+    display: none; /* Hide all tab contents by default */
+    padding: 20px;
+  }
+</style>
+</head>
+<body>
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="dropdown mb-3">
+        <h3>Device Type:</h3>
+        <select id = Dropdown1 class="form-control">
+          <option value="Desktop">Desktop</option>
+          <option value="Laptop">Laptop</option>
+          <option value="Monitor">Monitor</option>
+          <option value="Dock">Docking Station</option>
+        </select>
+      </div>
+      <div class="dropdown mb-3">
+        <h3>Problem Description</h3>
+        <select id = Dropdown2 class="form-control">
+          <option value="NA">N/A</option>
+          <option value="no power">no power</option>
+          <option value="no boot">no boot</option>
+          <option value="no post">no post</option>
+          <option value="display issues">display issues</option>
+          <option value="storage">storage</option>
+          <option value="memory">memory</option>
+          <option value="ports">ports</option>
+          <option value="keyboard">keyboard</option>
+          <option value="touchpad">touchpad</option>
+          <option value="auto restart">auto restart</option>
+          <option value="audio">audio</option>
+          <option value="overheating">overheating</option>
+          <option value="fan">fan</option>
+          <option value="software">software</option>
+          <option value="network">network</option>
+          <option value="dock">dock</option>
+          <option value="cid">cid</option>
+          <option value="finger print">finger print</option>
+          <option value="camera">camera</option>
+          <option value="accessories">accessories</option>
+          <option value="touchscreen">touchscreen</option>
+          <option value="battery issue">battery issue</option>
+          <option value="cmos">cmos</option>
+        </select>
+      </div>
+      <div class="dropdown mb-3">
+        <h3>Sub Problem Description:</h3>
+        <select id = Dropdown3 class="form-control">
+            <option value="NA">N/A</option>
+            <option value="beeps">beeps</option>
+            <option value="cannot access bios">cannot access bios</option>
+            <option value="psu">psu</option>
+            <option value="ac adaptor">ac adaptor</option>
+            <option value="bsod">bsod</option>
+            <option value="backlight">backlight</option>
+            <option value="dim">dim</option>
+            <option value="flickering">flickering</option>
+            <option value="abnormal lines">abnormal lines</option>
+            <option value="pixels">pixels</option>
+            <option value="blinking">blinking</option>
+            <option value="no video">no video</option>
+            <option value="ssd">ssd</option>
+            <option value="hdd">hdd</option>
+            <option value="drive not seen">drive not seen</option>
+            <option value="freeze">freeze</option>
+            <option value="locks">locks</option>
+            <option value="ram">ram</option>
+            <option value="device very slow">device very slow</option>
+            <option value="charging">charging</option>
+            <option value="usb">usb</option>
+            <option value="not detectable">not detectable</option>
+            <option value="loose">loose</option>
+            <option value="trackpoint">trackpoint</option>
+            <option value="keys not working">keys not working</option>
+            <option value="trackpoint moving">trackpoint moving</option>
+            <option value="trackpad">trackpad</option>
+            <option value="clicks">clicks</option>
+            <option value="not responding">not responding</option>
+            <option value="cursor moving">cursor moving</option>
+            <option value="auto shutdown">auto shutdown</option>
+            <option value="cpu">cpu</option>
+            <option value="speakers">speakers</option>
+            <option value="mic">mic</option>
+            <option value="no sound">no sound</option>
+            <option value="speakers crackling">speakers crackling</option>
+            <option value="low">low</option>
+            <option value="crackling">crackling</option>
+            <option value="fan noise">fan noise</option>
+            <option value="fan error">fan error</option>
+            <option value="bitlocker">bitlocker</option>
+            <option value="drivers">drivers</option>
+            <option value="bios update">bios update</option>
+            <option value="firmware">firmware</option>
+            <option value="wifi">wifi</option>
+            <option value="ethernet">ethernet</option>
+            <option value="cable">cable</option>
+            <option value="port">port</option>
+            <option value="nic">nic</option>
+            <option value="connection">connection</option>
+            <option value="rj45">rj45</option>
+            <option value="disconnected">disconnected</option>
+            <option value="no power">no power</option>
+            <option value="network">network</option>
+            <option value="display">display</option>
+            <option value="cracked">cracked</option>
+            <option value="broken">broken</option>
+            <option value="damaged">damaged</option>
+            <option value="liquid">liquid</option>
+            <option value="not working">not working</option>
+            <option value="not detected">not detected</option>
+            <option value="distorted">distorted</option>
+            <option value="blurry">blurry</option>
+            <option value="driver not seen">driver not seen</option>
+            <option value="pen">pen</option>
+            <option value="printer">printer</option>
+            <option value="mouse">mouse</option>
+            <option value="keyboard">keyboard</option>
+            <option value="headset">headset</option>
+            <option value="phantom touch">phantom touch</option>
+            <option value="ghost">ghost</option>
+            <option value="battery health">battery health</option>
+            <option value="drain">drain</option>
+            <option value="unable to image">unable to image</option>
+            <option value="thermal">thermal</option>
+            <option value="monitor">monitor</option>
+            <option value="cannot wake up from sleep">cannot wake up from sleep</option>
+            <option value="power">power</option>
+            <option value="ghost type">ghost type</option>
+            <option value="cmos battery">cmos battery</option>
+            <option value="battery doesn't charge">battery doesn't charge</option>
+            <option value="sticking">sticking</option>
+            <option value="usb c">usb c</option>
+            <option value="power button">power button</option>
+            <option value="gpu">gpu</option>
+            <option value="stuck">stuck</option>
+        </select>
+      </div>
+      <div class="form-group mb-3"> <!-- Use form-group class for proper spacing -->
+        <h3>M/T</h3>
+        <input type="text" id="MT" name="MT" class="form-control"> <!-- Added form-control class -->
+      </div>
+      <div class="form-group mb-3"> <!-- Use form-group class for proper spacing -->
+        <h3>Search</h3>
+        <input type="file" id="excel_file" value="Search">
+      </div>
+    </div>
+
+    <div class="col-md-9">
+      <div class="tab mb-3">
+        <button class="btn btn-primary tablinks" onclick="openTab(event, 'Tab1')">Device Details</button>
+        <button class="btn btn-primary tablinks" onclick="openTab(event, 'Tab5')">Issue Description</button>
+        <button class="btn btn-primary tablinks" onclick="openTab(event, 'Tab2')">PD Guide Steps</button>
+        <button class="btn btn-primary tablinks" onclick="openTab(event, 'Tab3')">Troubleshooting Done</button>
+        <button class="btn btn-primary tablinks" onclick="openTab(event, 'Tab4')">Dispatched Parts</button>
+      </div>
+
+      <div id="Tab1" class="tabcontent">
+        <h3>Device Details:</h3>
+        <p id = "tab1content">Not Chosen Yet.</p>
+        <div id="excel_data" class="mt-5"></div>
+
+      </div>
+      <div id="Tab5" class="tabcontent">
+        <h3>Issue Description:</h3>
+        <p id = "tab5content">Not Chosen Yet.</p>
+      </div>
+      
+
+      <div id="Tab2" class="tabcontent">
+        <h3>PD Guide Code / PD guide Steps taken:</h3>
+        <p id = "tab2content">Not Chosen Yet.</p>
+      </div>
+
+      <div id="Tab3" class="tabcontent">
+        <h3>Troubleshooting Steps taken:</h3>
+        <p id = "tab3content">Not Chosen Yet.</p>
+      </div>
+
+      <div id="Tab4" class="tabcontent">
+        <h3>Dispatch Parts:</h3>
+        <p id = "tab4content">Not Chosen Yet.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS and jQuery (required for Bootstrap) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+var model;
+var gen;
+var type;
+var pdcode = [];
+var pdguide = [];
+var ts = [];
+var parts = [];
+var issue = [];
+var counter;
+
+const excel_file = document.getElementById('excel_file');
+//const searchInput = document.getElementById('input');
+
+var items1;
+var Dropdown1 = document.getElementById("Dropdown1");
+var Dropdown2 = document.getElementById("Dropdown2");
+var Dropdown3 = document.getElementById("Dropdown3");
+var MT = document.getElementById("MT");
+var sheet = 
+{
+  Desktop: [0],
+  Laptop: [1],
+  Monitor: [2],
+  Dock: [3]
+};
+
+function updateSheet() {
+  var selectedCategory = Dropdown1.value;
+  items1 = sheet[selectedCategory];
+}
+updateSheet();
+
+Dropdown1.addEventListener("change", updateSheet);
+
+excel_file.addEventListener('change', (event) => {
+
+if(!['application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'application/vnd.ms-excel'].includes(event.target.files[0].type))
+{
+    document.getElementById('excel_data').innerHTML = '<div class="alert alert-danger">Only .xlsx or .xls file format are allowed</div>';
+
+    excel_file.value = '';
+
+    return false;
+}
+
+      model = "";
+      gen = "";
+      type = "";
+      pdcode = [];
+      pdguide = [];
+      ts = [];
+      parts =[];
+      issue =[];
+            
+  var reader = new FileReader();
+  var flag = "-1";
+  counter = 0;
+  reader.readAsArrayBuffer(event.target.files[0]);
+
+  reader.onload = function(event)
+  {
+
+      var data = new Uint8Array(reader.result);
+
+      var work_book = XLSX.read(data, {type:'array'});
+
+      var sheet_name = work_book.SheetNames;
+
+      var sheet_data = XLSX.utils.sheet_to_json(work_book.Sheets[sheet_name[items1]], {header:1});
+  
+      if(sheet_data.length > 0)
+      {
+        for(var row = 0; row < sheet_data.length; row++)
+        {
+          if(((sheet_data[row][16] == Dropdown2.value)||(Dropdown2.value == "NA")) && ((sheet_data[row][17] == Dropdown3.value)||(Dropdown3.value == "NA")) && (sheet_data[row][4] == MT.value))
+          {
+            flag = row;
+            model = sheet_data[row][2];
+            gen =sheet_data[row][3];
+            type =sheet_data[row][4];
+            pdcode[counter] = sheet_data[row][20];
+            pdguide[counter] =sheet_data[row][21];
+            ts[counter] = sheet_data[row][7];
+            parts[counter] =sheet_data[row][8];
+            issue[counter] =sheet_data[row][5];
+            counter ++;
+          }
+          excel_file.value = '';
+          changeTabContent();
+        }
+      }
+
+  }
+
+});
+
+//excel_file.addEventListener('change', changeTabContent);
+
+function openTab(evt, tabName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none"; // Hide all tab content
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].classList.remove("active"); // Remove "active" class from all tab links
+    }
+    document.getElementById(tabName).style.display = "block"; // Show the selected tab content
+    evt.currentTarget.classList.add("active"); // Add "active" class to the clicked tab link
+  }
+
+  function changeTabContent() {
+    var tab1content = document.getElementById("tab1content");
+    var tab2content = document.getElementById("tab2content");
+    var tab3content = document.getElementById("tab3content");
+    var tab4content = document.getElementById("tab4content");
+    var tab5content = document.getElementById("tab5content");
+    tab1content.innerHTML = "Model : " + model + "<br>";
+    tab1content.innerHTML += "Generation : " + gen + "<br>";
+    tab1content.innerHTML += "Type :" + type + "<br>";
+
+    for(var i1 = 0; i1 < issue.length; i1++)
+    {
+        if(i1==0)
+        {
+            tab2content.innerHTML ="PD code: " + pdcode[i1] + "<br>";
+            tab2content.innerHTML +="PD guide: " + pdguide[i1] + "<br><br>";
+            
+            tab3content.innerHTML = "Troubleshooting Steps Taken: " + ts[i1] +"<br><br>";
+
+            tab4content.innerHTML = "Action Plan Taken: " + parts[i1] +"<br><br>";
+
+            tab5content.innerHTML = "Issue Description: " + issue[i1] +"<br><br>";
+        }
+        else
+        {
+            tab2content.innerHTML +="PD code: " + pdcode[i1] + "<br>";
+            tab2content.innerHTML +="PD guide: " + pdguide[i1] + "<br><br>";
+
+            tab3content.innerHTML += "Troubleshooting Steps Taken: " + ts[i1] +"<br><br>";
+
+            tab4content.innerHTML += "Action Plan Taken: " + parts[i1] +"<br><br>";
+
+            tab5content.innerHTML += "Issue Description: " + issue[i1] +"<br><br>";
+        }
+    }
+    //model = "";
+    //gen = "";
+    //type = "";
+    //pdcode = [];
+    //pdguide = [];
+    //ts = [];
+    //parts =[];
+    //issue =[];
+
+}
+
+
+</script>
+
+</body>
+</html>
